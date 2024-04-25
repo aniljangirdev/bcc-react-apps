@@ -19,19 +19,18 @@ export default function StarRating({ noOfStars = 5 }) {
   }
 
   return (
-    <div className="start-rating">
+    <div className="star-rating">
       {[...Array(noOfStars)].map((_, index) => {
         index += 1;
-
         return (
           <FaStar
-            className={index <= hover || rating ? "active" : "inactive"}
+            className={index <= (hover || rating) ? "active" : "inactive"}
             key={index}
             onClick={() => handleClick(index)}
             onMouseMove={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave()}
             size={40}
-          ></FaStar>
+          />
         );
       })}
     </div>
